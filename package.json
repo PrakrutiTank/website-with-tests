@@ -1,0 +1,33 @@
+{
+  "name": "website-with-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A small task-tracking website with automated tests.",
+  "scripts": {
+    "dev": "http-server . -p 4173 -o",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "babel-jest": "^30.0.0",
+    "http-server": "^14.1.1",
+    "jest": "^30.0.0",
+    "jest-environment-jsdom": "^30.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
+  }
+}

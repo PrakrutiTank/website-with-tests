@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f5f1">
+    <meta name="description" content="A calm, simple place to keep track of what needs doing.">
+    <title>Daymark — make room for what matters</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <script src="src/app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell" id="task-app">
+      <header class="topbar">
+        <a class="wordmark" href="#" aria-label="Daymark home">
+          <span class="wordmark-mark" aria-hidden="true">d</span>
+          <span>daymark</span>
+        </a>
+        <span class="topbar-note">A little more focused</span>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> YOUR SPACE, YOUR PACE</p>
+        <h1 id="page-title">Make room for<br><span>what matters.</span></h1>
+        <p class="intro">A clear mind starts with a clear list.<br class="desktop-break"> Take today one thing at a time.</p>
+      </section>
+
+      <section class="task-panel" aria-labelledby="list-heading">
+        <div class="panel-heading">
+          <div>
+            <p class="section-kicker">THE LITTLE THINGS</p>
+            <h2 id="list-heading">Your list<span class="heading-period">.</span></h2>
+          </div>
+          <span class="task-count" id="task-count" aria-live="polite">0 tasks</span>
+        </div>
+
+        <form class="task-form" id="task-form">
+          <label class="visually-hidden" for="task-input">Add a task</label>
+          <input id="task-input" name="task" type="text" maxlength="120" placeholder="What would you like to get done?" autocomplete="off">
+          <button class="add-button" type="submit"><span aria-hidden="true">+</span> Add task</button>
+        </form>
+        <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+
+        <div class="list-toolbar">
+          <label class="visually-hidden" for="task-filter">Show tasks</label>
+          <select id="task-filter" aria-label="Show tasks">
+            <option value="all">All tasks</option>
+            <option value="active">To do</option>
+            <option value="completed">Completed</option>
+          </select>
+          <button class="text-button" id="clear-completed" type="button">Clear completed</button>
+        </div>
+
+        <ul class="task-list" id="task-list" aria-label="Tasks"></ul>
+        <p class="empty-state" id="empty-state">Nothing on the list just yet. Add a task to get started.</p>
+        <div class="panel-footer">
+          <span><span class="footer-spark" aria-hidden="true">✳</span> Progress, not perfection.</span>
+          <span id="remaining-count">A fresh start</span>
+        </div>
+      </section>
+
+      <footer class="page-footer">Made for the everyday, not just the someday.</footer>
+    </main>
+  </body>
+</html>
